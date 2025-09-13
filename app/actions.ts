@@ -1,4 +1,10 @@
+"use server";
+import { sendEmail } from "@/app/actions"; // works if sendEmail is a server action
 
+async function handleSubmit(formData: FormData) {
+  "use server";
+  await sendEmail(formData);
+}
 
 import { z } from "zod"
 import nodemailer from "nodemailer"
